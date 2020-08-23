@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <cs50.h>
+
+// this is a funtion
+int get_positive(void);
+
+//this is the main program
+int main(void)
+{
+    //this prompts the user for the size they want
+    int blocks = get_positive();
+    //this runs the program the number of times the user wants to make the pyramid
+    for (int i = 0; i < blocks; i++)
+    {
+        //this prints " " i number of times
+        for (int k = blocks - i; k > 1; k--)
+        {
+            printf(" ");
+        }
+        //this prints "#"
+        for (int j = 0; j <= i; j++)
+        {
+        
+            printf("#");
+        }
+        //this prints "\n"
+        printf("\n");
+    }
+}
+
+int get_positive(void)
+{
+    int n;
+    do
+    {
+        n = get_int("How big would you like your pyramid?\n");
+    }
+    while (n < 1);
+    return n;
+}
+
